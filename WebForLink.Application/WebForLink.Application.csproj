@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8EEBB05C-7792-42E7-9E44-5967E9715EC5}</ProjectGuid>
+    <ProjectGuid>{2F2542DF-FCB0-465D-89A6-595721F89FAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebForLink.Domain</RootNamespace>
-    <AssemblyName>WebForLink.Domain</AssemblyName>
+    <RootNamespace>WebForLink.Application</RootNamespace>
+    <AssemblyName>WebForLink.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,19 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\FornecedorBuilder.cs" />
-    <Compile Include="Entities\AprovacaoException.cs" />
-    <Compile Include="Entities\Categoria.cs" />
-    <Compile Include="Entities\Contato.cs" />
-    <Compile Include="Entities\WorkFlow.cs" />
-    <Compile Include="Entities\Fornecedor.cs" />
-    <Compile Include="Entities\Passo.cs" />
-    <Compile Include="Entities\Solicitacao.cs" />
-    <Compile Include="Entities\Cliente.cs" />
-    <Compile Include="Entities\Solicitante.cs" />
-    <Compile Include="Factories\CadastroDeFornecedor.cs" />
-    <Compile Include="Interfaces\ISolicitado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FornecedorApplicationService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebForLink.Domain\WebForLink.Domain.csproj">
+      <Project>{8eebb05c-7792-42e7-9e44-5967e9715ec5}</Project>
+      <Name>WebForLink.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

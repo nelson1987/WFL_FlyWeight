@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8EEBB05C-7792-42E7-9E44-5967E9715EC5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{A3211C80-8189-4E48-8A34-F9E206FA9CA2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebForLink.Domain</RootNamespace>
-    <AssemblyName>WebForLink.Domain</AssemblyName>
+    <RootNamespace>WebForLink.UI</RootNamespace>
+    <AssemblyName>WebForLink.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,19 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\FornecedorBuilder.cs" />
-    <Compile Include="Entities\AprovacaoException.cs" />
-    <Compile Include="Entities\Categoria.cs" />
-    <Compile Include="Entities\Contato.cs" />
-    <Compile Include="Entities\WorkFlow.cs" />
-    <Compile Include="Entities\Fornecedor.cs" />
-    <Compile Include="Entities\Passo.cs" />
-    <Compile Include="Entities\Solicitacao.cs" />
-    <Compile Include="Entities\Cliente.cs" />
-    <Compile Include="Entities\Solicitante.cs" />
-    <Compile Include="Factories\CadastroDeFornecedor.cs" />
-    <Compile Include="Interfaces\ISolicitado.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebForLink.Application\WebForLink.Application.csproj">
+      <Project>{2f2542df-fcb0-465d-89a6-595721f89fad}</Project>
+      <Name>WebForLink.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebForLink.Domain\WebForLink.Domain.csproj">
+      <Project>{8eebb05c-7792-42e7-9e44-5967e9715ec5}</Project>
+      <Name>WebForLink.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
