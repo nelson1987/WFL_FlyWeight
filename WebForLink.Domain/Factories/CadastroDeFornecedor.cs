@@ -9,12 +9,12 @@ namespace WebForLink.Domain.Factories
         {
             Fornecedor = fornecedor;
             Solicitacao = solicitacao;
-            Fluxo = fluxo;
+            //Fluxo = fluxo;
         }
 
         public Fornecedor Fornecedor { get; private set; }
         public Solicitacao Solicitacao { get; private set; }
-        public WorkFlow Fluxo { get; private set; }
+        //public WorkFlow Fluxo { get; private set; }
 
 
     }
